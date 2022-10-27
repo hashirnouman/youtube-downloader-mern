@@ -1,8 +1,10 @@
 import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
+import route from "./routes";
 import cors from "cors";
 import * as bodyparser from "body-parser";
 import mongoose from "mongoose";
+import ytdl from "ytdl-core";
 dotenv.config();
 const app: Express = express();
 app.use(cors());
@@ -17,6 +19,10 @@ mongoose
     });
   })
   .catch((err) => console.log(err));
-app.get("/", (req: Request, res: Response) => {
-  res.send("Express + TypeScript Server");
-});
+app.use(express.json());
+app.use(
+  express.urlencoded({
+    extended: false,
+  })
+);
+app.use("/", route);
