@@ -3,11 +3,11 @@ export const LanguageButton = styled.div`
   border-width: 1.5px;
   border-color: rgb(241, 242, 244);
   border-style: solid;
-  border-radius: 10px;
+  border-radius: 7px;
   background-color: ${(props) => props.theme.colors.danger};
   box-shadow: 0px 2px 6.42px 4.58px rgba(70, 70, 70, 0.13);
-  width: 185px;
-  height: 53px;
+  width: 150px;
+  height: 43px;
   display: flex;
   justify-content: center;
   align-items: center;

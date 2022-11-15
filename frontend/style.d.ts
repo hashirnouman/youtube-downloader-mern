@@ -15,6 +15,14 @@ declare module "styled-components" {
       outline: string;
       boxBg: string;
       shadowBg: string;
+      navbar: string;
+      navText: string;
+      text: string;
+      border: string;
+      featureText: string;
+      link: string;
+      white: string;
+      button: string;
     };
   }
 }

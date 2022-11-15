@@ -7,13 +7,14 @@ const Center = styled.div`
   justify-content: center;
   padding: 40px 0;
   align-items: center;
+  color: ${(props) => props.theme.colors.text};
 `;
 const FooterWrapper = styled.div`
   display: flex;
   justify-content: center;
 `;
 const FooterLink = styled.div`
-  font-size: 12px;
+  font-size: 15px;
   font-family: "Arial Black", sans-serif;
   color: ${(props) => props.theme.colors.main};
   margin: 15px;

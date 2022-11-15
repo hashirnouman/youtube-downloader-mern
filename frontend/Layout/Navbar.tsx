@@ -1,17 +1,23 @@
 import styled from "styled-components";
-import logo from "../public/logo-2.png";
+import React from "react";
+import Image from "next/image";
+import { CheckBox, CheckBoxLabel, LanguageButton } from "../components/Button";
+import logo from "../public/logo.png";
 const NavbarWrapper = styled.nav`
-  background-color: rgb(255, 255, 255);
+  background-color: ${(props) => props.theme.colors.navbar};
   box-shadow: 0px 5px 6.65px 0.35px rgba(0, 0, 0, 0.06);
-  height: 80px;
+  height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 60px;
+  position: fixed;
+  top: 0;
+  width: 100%;
 `;
 const NavLink = styled.div`
   font-size: 15px;
-  color: rgb(45, 62, 80);
+  color: ${(props) => props.theme.colors.navText};
   font-family: "Arial Black", sans-serif;
   font-weight: bold;
   line-height: 1.323;
@@ -23,16 +29,22 @@ const ButtonWrapper = styled.div`
   align-items: baseline;
   flex: 0.4;
 `;
-import React from "react";
-import Image from "next/image";
-import { CheckBox, CheckBoxLabel, LanguageButton } from "../components/Button";
-
+const Logo = styled.div`
+  display: flex;
+  font-size: 30px;
+  align-items: center;
+  font-family: "Arial Black", sans-serif;
+  color: ${(props) => props.theme.colors.main};
+`;
 type Props = {};
 
 const Navbar = (props: Props) => {
   return (
     <NavbarWrapper>
-      <Image src={logo} alt="logo" width={170} />
+      <Logo>
+        <Image src={logo} alt="logo" width={50} />
+        &nbsp; Yts1.co
+      </Logo>
       <NavLink>Youtube Downloader</NavLink>
       <NavLink>Youtube To Mp3 Converter</NavLink>
       <ButtonWrapper>

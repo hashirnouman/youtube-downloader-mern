@@ -7,16 +7,17 @@ const FormWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 20px;
+  padding-top: 130px;
+  color: ${(props) => props.theme.colors.text};
 `;
 const Box = styled.div`
   border-width: 1.5px;
-  border-color: rgb(241, 242, 244);
+  border-color: ${(props) => props.theme.colors.outline};
   border-style: solid;
   border-radius: 10px;
-  background-color: rgb(255, 255, 255);
+  background-color: ${(props) => props.theme.colors.boxBg};
   box-shadow: 0px 5px 13.42px 8.58px;
-  color: rgba(70, 70, 70, 0.13);
+  color: ${(props) => props.theme.colors.shadowBg};
   width: 1000px;
   height: 300px;
   display: flex;
@@ -31,7 +32,7 @@ const InputWrapper = styled.div`
   border-radius: 5px;
   & > div {
     border: 5px solid;
-    border-color: ${(props) => props.theme.colors.main};
+    border-color: ${(props) => props.theme.colors.border};
     vertical-align: middle; /* needed for Safari */
   }
   input {
@@ -47,13 +48,13 @@ const InputWrapper = styled.div`
 const InputArea = styled.div`
   width: 500px;
   height: 60px;
-  border-color: ${(props) => props.theme.colors.main};
+  border-color: ${(props) => props.theme.colors.outline};
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   display: flex;
 `;
-const InputIcon = styled.div`
-  background: ${(props) => props.theme.colors.main};
+const DownloadButton = styled.div`
+  background: ${(props) => props.theme.colors.button};
   color: white;
   display: flex;
   justify-content: center;
@@ -82,12 +83,12 @@ const Form = (props: Props) => {
             <InputArea>
               <input placeholder="Search or Paster Video Link Here" />
             </InputArea>
-            <InputIcon>
+            <DownloadButton>
               Download &nbsp;
               <span>
                 <Image src={downloadIcon} alt="download icon" width={20} />{" "}
               </span>{" "}
-            </InputIcon>
+            </DownloadButton>
           </InputWrapper>
           <P1>
             By using our service you are accepting our &nbsp;

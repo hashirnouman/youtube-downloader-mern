@@ -11,6 +11,6 @@ export const P1 = styled.p`
   text-align: center;
   line-height: 1.323;
   a {
-    color: ${(props) => props.theme.colors.blue};
+    color: ${(props) => props.theme.colors.link};
   }
 `;

@@ -18,13 +18,14 @@ const Feature = styled.div`
 const Title = styled.div`
   text-align: center;
   font-family: "Arial Black", sans-serif;
-  color: ${(props) => props.theme.colors.green};
+  color: ${(props) => props.theme.colors.featureText};
   font-weight: 900;
   padding: 5px;
 `;
-const Text = styled.div`
+export const Text = styled.div`
   text-align: center;
-  font-size: 12px;
+  font-size: 15px;
+  color: ${(props) => props.theme.colors.text};
 `;
 type Props = {};
 const Features = (props: Props) => {

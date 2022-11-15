@@ -4,6 +4,7 @@ import styled from "styled-components";
 type Props = {};
 const NumberWrapper = styled.div`
   display: flex;
+  align-items: center;
 `;
 const Number1 = styled.div`
   font-family: "Garet", sans-serif;
@@ -24,7 +25,7 @@ const Number3 = styled.div`
   font-size: 45px;
   margin: 0 5px;
   font-weight: 900;
-  color: ${(props) => props.theme.colors.main};
+  color: ${(props) => props.theme.colors.white};
 `;
 const Flex = styled.div`
   display: flex;
@@ -62,7 +63,6 @@ const Steps = (props: Props) => {
         </NumberWrapper>
       </Flex>
       <br />
-      
     </div>
   );
 };
