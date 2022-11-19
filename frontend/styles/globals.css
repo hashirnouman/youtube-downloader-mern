@@ -1,10 +1,11 @@
-@import url("https://fonts.cdnfonts.com/css/arial");
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: "Arial", sans-serif;
+  transition: 0.1s linear all;
 }
+@import url("https://fonts.cdnfonts.com/css/arial");
 
 a {
   text-decoration: none;

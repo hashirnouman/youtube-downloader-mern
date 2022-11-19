@@ -8,6 +8,16 @@ import free from "../public/free-downloads.png";
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
+  gap: 1em;
+  @media screen and (min-width: 320px) and (max-width: 480px) {
+    flex-direction: column;
+  }
+  @media screen and (min-width: 481px) and (max-width: 768px) {
+    flex-direction: column;
+  }
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    flex-direction: column;
+  }
 `;
 const Feature = styled.div`
   display: flex;

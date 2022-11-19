@@ -17,7 +17,6 @@ export default function Home() {
       <Pitch />
       <Steps />
       <Features />
-      
     </div>
   );
 }

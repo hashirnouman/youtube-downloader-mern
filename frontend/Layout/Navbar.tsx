@@ -15,6 +15,7 @@ const NavbarWrapper = styled.nav`
   position: fixed;
   top: 0;
   width: 100%;
+  margin: 0;
 `;
 const NavLink = styled.div`
   font-size: 15px;
@@ -43,7 +44,6 @@ type Props = {
 };
 
 const Navbar = ({ toggleTheme }: Props) => {
-  // className={`${styles.description} ${styles.yellow}`}
   return (
     <NavbarWrapper>
       <Logo>

@@ -29,7 +29,16 @@ const Number3 = styled.div`
 `;
 const Flex = styled.div`
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  gap: 0.6em;
+  @media screen and (min-width: 320px) and (max-width: 480px) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  @media screen and (min-width: 481px) and (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 const Steps = (props: Props) => {
   return (
