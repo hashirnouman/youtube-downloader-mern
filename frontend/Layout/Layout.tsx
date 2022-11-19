@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./Navbar";
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import Footer from "./Footer";
+import { dark, light } from "../my-theme";
 type Props = {
   children: any;
 };
@@ -10,12 +11,18 @@ const LayoutWrapper = styled.div`
   height: 100%;
 `;
 const Layout = ({ children }: Props) => {
+  const [theme, setTheme] = useState("light");
+  const toggleTheme = () => {
+    theme === "light" ? setTheme("dark") : setTheme("light");
+  };
   return (
-    <LayoutWrapper>
-      <Navbar />
-      {children}
-      <Footer />
-    </LayoutWrapper>
+    <ThemeProvider theme={theme === "light" ? light : dark}>
+      <LayoutWrapper>
+        <Navbar toggleTheme={toggleTheme} />
+        {children}
+        <Footer />
+      </LayoutWrapper>
+    </ThemeProvider>
   );
 };
 

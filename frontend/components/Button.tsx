@@ -21,7 +21,7 @@ export const CheckBoxLabel = styled.label`
   width: 42px;
   height: 26px;
   border-radius: 15px;
-  background: #bebebe;
+  background: red;
   cursor: pointer;
   &::after {
     content: "";

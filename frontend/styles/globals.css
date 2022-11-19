@@ -12,7 +12,7 @@ a {
 
 * {
   box-sizing: border-box;
-  background-color: "#e5e9f4";
+  transition: 0.1s linear all;
 }
 
 @font-face {

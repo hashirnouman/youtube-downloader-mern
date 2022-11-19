@@ -1,7 +1,7 @@
 // my-theme.ts
 import { DefaultTheme } from "styled-components";
 
-const myTheme: DefaultTheme = {
+const light: DefaultTheme = {
   colors: {
     main: "#2d3e50",
     secondary: "magenta",
@@ -45,4 +45,4 @@ const dark: DefaultTheme = {
     button: "#2ac58b",
   },
 };
-export { dark, myTheme };
+export { dark, light };
