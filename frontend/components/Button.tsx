@@ -16,6 +16,15 @@ export const LanguageButton = styled.div`
   color: rgb(255, 255, 255);
   line-height: 1.5;
   text-align: center;
+  @media screen and (min-width: 320px) and (max-width: 480px) {
+    display: none;
+  }
+  @media screen and (min-width: 481px) and (max-width: 768px) {
+    display: none;
+  }
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    display: none;
+  }
 `;
 export const CheckBoxLabel = styled.label`
   width: 42px;
