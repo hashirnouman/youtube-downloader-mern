@@ -4,6 +4,7 @@ import styled from "styled-components";
 type Props = {};
 const NumberWrapper = styled.div`
   display: flex;
+  align-items: center;
 `;
 const Number1 = styled.div`
   font-family: "Garet", sans-serif;
@@ -24,11 +25,20 @@ const Number3 = styled.div`
   font-size: 45px;
   margin: 0 5px;
   font-weight: 900;
-  color: ${(props) => props.theme.colors.main};
+  color: ${(props) => props.theme.colors.white};
 `;
 const Flex = styled.div`
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  gap: 0.6em;
+  @media screen and (min-width: 320px) and (max-width: 480px) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  @media screen and (min-width: 481px) and (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 const Steps = (props: Props) => {
   return (
@@ -62,7 +72,6 @@ const Steps = (props: Props) => {
         </NumberWrapper>
       </Flex>
       <br />
-      
     </div>
   );
 };

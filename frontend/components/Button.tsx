@@ -3,11 +3,11 @@ export const LanguageButton = styled.div`
   border-width: 1.5px;
   border-color: rgb(241, 242, 244);
   border-style: solid;
-  border-radius: 10px;
+  border-radius: 7px;
   background-color: ${(props) => props.theme.colors.danger};
   box-shadow: 0px 2px 6.42px 4.58px rgba(70, 70, 70, 0.13);
-  width: 185px;
-  height: 53px;
+  width: 150px;
+  height: 43px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,12 +16,21 @@ export const LanguageButton = styled.div`
   color: rgb(255, 255, 255);
   line-height: 1.5;
   text-align: center;
+  @media screen and (min-width: 320px) and (max-width: 480px) {
+    display: none;
+  }
+  @media screen and (min-width: 481px) and (max-width: 768px) {
+    display: none;
+  }
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    display: none;
+  }
 `;
 export const CheckBoxLabel = styled.label`
   width: 42px;
   height: 26px;
   border-radius: 15px;
-  background: #bebebe;
+  background: red;
   cursor: pointer;
   &::after {
     content: "";
