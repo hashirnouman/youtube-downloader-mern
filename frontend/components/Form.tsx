@@ -38,7 +38,7 @@ const Box = styled.div`
     width: 90%;
   }
 `;
-const InputWrapper = styled.div`
+ const InputWrapper = styled.div`
   display: table;
   border-collapse: collapse;
   width: 70%;
