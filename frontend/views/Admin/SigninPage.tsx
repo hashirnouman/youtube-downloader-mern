@@ -1,65 +1,38 @@
 import axios from "axios";
 import React, { useState } from "react";
 import styled from "styled-components";
-
+import { Button, Input } from "./components/FormComponents";
+import { useRouter } from "next/router";
 type Props = {};
 
-const SignupPage = (props: Props) => {
+const SigninPage = (props: Props) => {
+  const router = useRouter();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
     const credentials = { username, password };
+    try {
+      const user = await axios.post("/api/auth/login", credentials);
 
-    const user = await axios.post("/api/auth/login", credentials);
-    console.log(user);
+      if (user.status == 200) {
+        const obj: any = {
+          token: user.data.token,
+        };
+        const data = JSON.stringify(obj);
+        localStorage.setItem("token", data);
+
+        router.push("/admin");
+      }
+    } catch (e) {}
   };
   const handleLogOut = async () => {
     const user = await axios.get("/api/auth/logout");
 
     console.log(user);
   };
-  const Input = styled.input`
-    border: 0;
-    display: block;
-    min-width: 200%;
-    border-radius: 5px;
-    padding: 8px;
-    background-color: white;
-    &:focus {
-      outline: none;
-    }
-    @media screen and (min-width: 320px) and (max-width: 480px) {
-      font-size: 10px;
-      width: 90%;
-      padding: 5px;
-      & > div {
-        border: 3px solid;
-        border-color: ${(props: { theme: { colors: { border: any } } }) =>
-          props.theme.colors.border};
-        vertical-align: middle;
-      }
-    }
-    @media screen and (min-width: 481px) and (max-width: 768px) {
-      font-size: 12px;
-      width: 90%;
-    }
-  `;
-  const Button = styled.button`
-    background: blue;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
 
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    font-weight: 900;
-    cursor: pointer;
-    gap: 0.5em;
-  `;
   return (
     <div style={{ marginTop: "200px", height: "100vh" }}>
       <div style={{ display: "flex", justifyContent: "center" }}>
@@ -69,6 +42,7 @@ const SignupPage = (props: Props) => {
             name="username"
             placeholder="enter username"
             required
+            value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
           <br />
@@ -78,6 +52,7 @@ const SignupPage = (props: Props) => {
             name="password"
             placeholder="enter password"
             required
+            value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
           <br />
@@ -89,4 +64,4 @@ const SignupPage = (props: Props) => {
   );
 };
 
-export default SignupPage;
+export default SigninPage;
