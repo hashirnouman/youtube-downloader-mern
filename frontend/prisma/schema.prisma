@@ -14,3 +14,9 @@ model Admin {
   username   String   @unique
   password String
 }
+model Content {
+  id      String   @id @default(auto()) @map("_id") @db.ObjectId
+  title String
+  description String
+
+}
